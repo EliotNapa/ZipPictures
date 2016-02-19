@@ -1,0 +1,15 @@
+﻿<Window x:Class="ZipPictures.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ZipPictures" Height="200" Width="525" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnBrowse" Content="Browse" HorizontalAlignment="Left" Margin="136,25,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.37,2.739" Click="btnBrowse_Click"/>
+        <Label Content="Target Directory:" HorizontalAlignment="Left" Margin="22,19,0,0" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="txtDirName" HorizontalAlignment="Left" Height="23" Margin="23,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="466"/>
+        <Button x:Name="btnArchive" Content="Archive" HorizontalAlignment="Left" Margin="23,114,0,0" VerticalAlignment="Top" Width="188" Click="btnArchive_Click" Height="33"/>
+        <ProgressBar x:Name="progBar" HorizontalAlignment="Left" Height="20" Margin="22,82,0,0" VerticalAlignment="Top" Width="467"/>
+
+    </Grid>
+</Window>
