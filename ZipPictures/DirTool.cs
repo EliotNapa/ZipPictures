@@ -51,7 +51,7 @@ namespace ZipPictures
             foreach (string stFilePath in System.IO.Directory.GetFiles(folder))
             {
                 string strExt = System.IO.Path.GetExtension(stFilePath).ToLower();
-                if (strExt == ".jpg" || strExt == ".png" || strExt == ".jpeg")
+                if (strExt == ".jpg" || strExt == ".png" || strExt == ".jpeg" || strExt == ".avif")
                 {
                     iCount++;
                 }
