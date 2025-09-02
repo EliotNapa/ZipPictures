@@ -25,6 +25,8 @@ namespace ZipPictures
         BackgroundWorker _backgroundWorker;
         string[] _dirs;
 
+        public string StartupFolder = "";
+
 
         public MainWindow()
         {
@@ -39,6 +41,13 @@ namespace ZipPictures
             _backgroundWorker.ProgressChanged += new ProgressChangedEventHandler(Worker_ProgressChanged);
             _backgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(Worker_RunWorkerCompleted);
             _backgroundWorker.WorkerReportsProgress = true;
+
+            if (StartupFolder != "")
+            {
+                txtDirName.Text = StartupFolder;
+
+                btnArchive_Click(btnArchive, new RoutedEventArgs(Button.ClickEvent));
+            }
 
         }
 
@@ -109,8 +118,13 @@ namespace ZipPictures
         {
             this.btnArchive.IsEnabled = true;
             this.btnBrowse.IsEnabled = true;
+
+            if (StartupFolder != "")
+            {
+                Application.Current.Shutdown();
+            }
+
+
         }
-
-
-    }
+    } 
 }
