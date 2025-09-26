@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,14 +72,24 @@ namespace ZipPictures
 
 
             _dirs = dir.GetAllSubDirectories(txtDirName.Text);
+            string error_dir = "";
 
             int i = 0;
-            foreach (string dirName in _dirs)
+            try
             {
-                if (dir.IsPicturesFolder(dirName))
+                foreach (string dirName in _dirs)
                 {
-                    i++;
+                    error_dir = dirName;
+                    if (dir.IsPicturesFolder(dirName))
+                    {
+                        i++;
+                    }
                 }
+            }
+            catch(PathTooLongException)
+            {
+                MessageBox.Show($"Path too long:{error_dir}");
+                return;
             }
 
 
